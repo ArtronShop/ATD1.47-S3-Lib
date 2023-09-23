@@ -7,8 +7,6 @@
 #if __has_include(<lvgl.h>)
 #include <lvgl.h>
 #define USE_LVGL
-#else
-#error "LVGL not found"
 #endif
 #else
 #error "__has_include not work"

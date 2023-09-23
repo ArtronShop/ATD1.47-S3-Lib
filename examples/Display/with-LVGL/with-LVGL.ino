@@ -1,6 +1,6 @@
 #include <Arduino.h>
-#include <ATD1.47-S3.h>
 #include <lvgl.h>
+#include <ATD1.47-S3.h>
 
 void setup() {
   Serial.begin(115200);
