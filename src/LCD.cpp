@@ -1,8 +1,5 @@
 #include "LCD.h"
 #include <Arduino.h>
-#ifdef USE_LVGL
-#include <lvgl.h>
-#endif
 
 #include <SPI.h>
 #include "esp32-hal-spi.h"

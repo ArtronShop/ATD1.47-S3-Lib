@@ -3,12 +3,19 @@
 #include <stdint.h>
 #include <string.h>
 
+#if defined(__has_include)
+#if __has_include(<lvgl.h>)
+#include <lvgl.h>
+#define USE_LVGL
+#else
+#error "LVGL not found"
+#endif
+#else
+#error "__has_include not work"
+#endif
+
 #define LCD_WIDTH (320)
 #define LCD_HEIGHT (172)
-
-#if __has_include(<lvgl.h>)
-#define USE_LVGL
-#endif
 
 class LCD {
     private:
@@ -46,7 +53,7 @@ class LCD {
         void drawArrow(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1,uint16_t w,uint16_t color) ;
         void fillArrow(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1,uint16_t w,uint16_t color) ;
 
-#ifdef USE_LVGL
+#if __has_include(<lvgl.h>)
         void useLVGL() ;
         void loop() ;
 #endif
